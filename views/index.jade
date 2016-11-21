@@ -1,0 +1,47 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        title= title
+        link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css')
+        link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css')
+        link(rel='stylesheet', href='css/style.css')
+        script(src='https://code.jquery.com/jquery-3.1.1.min.js', integrity='sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=', crossorigin='anonymous')
+        script(src='//netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js')
+        script(src='js/main.js')
+    body
+        .row
+            a.btn.btn-success(href='/logout') LogOut
+            .col-md-6.col-md-offset-3
+                .panel.panel-default
+                    .panel-heading Users
+                    table.table
+                        tr
+                            th User
+                            th Age
+                            th Note
+                            th Delete
+                            th Edit
+                        each  item in users
+                            tr
+                            item.name
+                                td= item.name
+                                td= item.age
+                                td= item.married
+                                td
+                                    button.btn.btn-primary(type='button' onclick='deleteUser("#{item.id}")') Delete
+                                td
+                                    button.btn.btn-primary(type='button' onclick='editUser("#{item.id}")' ) Edit
+        .row
+            div.alert.alert-success.col-md-6.col-md-offset-3(role='alert') ДОБАВИТЬ НОВОГО ПОЛЬЗОВАТЕЛЯ
+        .row
+            .col-md-6.col-md-offset-3
+                form.navbar-form.navbar-left(method='post', name='addUser')
+                    .form-group
+                        label(for='userAge') Name
+                            input#userAge.form-control(name='name', type='text', placeholder='Name' )
+                        label(for='userName') Age
+                            input#userName.form-control(name='age', type='text', placeholder='Age')
+                        label(for='userIsMarried') Note
+                            input#userIsMarried.form-control(name='married', type='text', placeholder='Note')
+                        button.btn.btn-default.col-md-6.col-md-offset-3(type='submit') Добавить
