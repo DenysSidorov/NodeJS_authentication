@@ -7,22 +7,26 @@ html(lang='en')
         link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css', integrity='sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi', crossorigin='anonymous')
         script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js', integrity='sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK', crossorigin='anonymous')
         link(rel='stylesheet', href='css/style.css')
+        script(type='text/javascript', src='effects/jquery.particleground.js')
+        script(type='text/javascript', src='effects/demo.js')
         script(src='js/main.js')
     body
-        .row.m-topMain
-            .col-md-4.offset-md-4.m-top
-                form(method='post', novalidate name='login')
-                    .form-group
-                        label.sr-only(for='exampleInputEmail3') Email address
-                        input#exampleInputEmail3.form-control(name='mail', type='email', placeholder='Enter email')
-                    .form-group
-                        label.sr-only(for='exampleInputPassword3') Password
-                        input#exampleInputPassword3.form-control(name='pass', type='password', placeholder='Password')
-                    .form-check
-                        label.form-check-label
-                            input.form-check-input(name='remember', type='checkbox' value='1')
-                            |  Remember me
-                    button.btn.btn-primary(type='submit') Sign in
+        #particles
+            #intro
+                .row.m-topMain
+                    .col-md-4.offset-md-4.m-top
+                        form(method='post', novalidate name='login')
+                            .form-group
+                                label.sr-only(for='exampleInputEmail3') Email address
+                                input#exampleInputEmail3.form-control(name='mail', type='email', placeholder='Enter email')
+                            .form-group
+                                label.sr-only(for='exampleInputPassword3') Password
+                                input#exampleInputPassword3.form-control(name='pass', type='password', placeholder='Password')
+                            .form-check
+                                label.form-check-label
+                                    input.form-check-input(name='remember', type='checkbox' value='1')
+                                    |  Remember me
+                            button.btn.btn-primary(type='submit') Sign in
 
 
 
